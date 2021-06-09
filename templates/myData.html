@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <title>Database Demo</title>
+    <link rel="stylesheet" href="../static/css/dbStyle.css" />
+</head>
+<body>
+    <h1>Hello {{name}}</h1>
+
+    <table>
+
+        <tr>
+            <th>Name</th>
+            <th>Id</th>
+            <th>Class</th>
+            <th>Address</th>
+        </tr>
+
+        {% if stud_list %}
+
+        {% for student in stud_list %}
+
+        <tr>
+            <td>{{student.studentName}}</td>
+            <td>{{student.studentId}}</td>
+            <td>{{student.studentClass}}</td>
+            <td>{{student.studentAddress}}</td>
+        </tr>
+
+        {% endfor %}
+
+        {% endif %}
+
+    </table>
+</body>
+</html>
